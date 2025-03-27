@@ -1,30 +1,63 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
-<HTML>
+<html>
 
-<head>
-    <Title>Formulários</Title>
-</head>
+    <head>
+        <Title>Formulários</Title>
+    </head>
 
-<body>
-<h1>Forms</h1>
+    <body>
+        <h1>Forms</h1>
 
-<form>
-    Cadastre-se:
-    <br>
-    <input type="text" name="Nome" placeholder="Nome" /> <!-- Tipo de dado a ser coletado (type), nome da "variável" (name) e texto que aparece dentro da caixa (placeholder) -->
+        <form>
+            Cadastre-se:
+            <br>
+            <input type="text" name="Nome" placeholder="Nome" /> <!-- Tipo de dado a ser coletado (type), nome da "variável" (name) e texto que aparece dentro da caixa (placeholder) -->
 
-    <br>
+            <br>
 
-    Senha:
-    <br>
-    <input type="password" name="Senha" placeholder="Senha" /> <!-- Não mostra os caracteres digitados -->
-    <input type="button" value="Botão"> <!-- Não faz nada kk-->
+            Senha:
+            <br>
+            <input type="password" name="Senha" placeholder="Senha" /> <!-- Não mostra os caracteres digitados -->
+            <input type="button" value="Botao"> <!-- Não faz nada kk-->
 
-    <br>
+            <br>
 
-    <input type="submit" value="Login"> <!-- Envia o formulário --> <!-- file:///home/alecc/Desktop/Udemy/WebCourse/Section01/Aula05/index.html?Nome=Alec&Senha=1234 -->
-</form>
-</body>
+            Genero:
+            <br> <!--Utilizar o mesmo name no radio impede que as duas opções sejam selecionadas simultâneamente. Então utilizamos value para diferenciar em js as duas opções-->
+            <input type="radio" name="Genero" value="Masculino" /> Masculino
+            <input type="radio" name="Genero" value="Feminino" /> Feminino
+            <input type="radio" name="Genero" value="Outro" /> Outro
 
-</HTML>
+            <br>
+
+            Interesses:
+            <br>
+            <input type="checkbox" name="Interesses" value="Jiu-Jitsu" /> Jiu-Jitsu
+            <input type="checkbox" name="Interesses" value="Muay-thai" /> Muay-thai
+
+            <br>
+
+            Estado:
+            <br>
+            <select name="Estado">
+                <option value="Nenhum">Selecione</option>
+                <option value="SP">SP</option>
+                <option value="RJ">RJ</option>
+            </select>
+
+            <br>
+
+            Observações:
+            <br>
+            <textarea></textarea>
+
+            <br>
+
+            <input type="submit" value="Login"> <!-- Envia o formulário -->
+
+            <!-- http://localhost:63342/WebCourse/Section01/Aula04/index.html?Nome=Alec&Senha=1234&Genero=Masculino&Interesses=Jiu-Jitsu&Estado=SP -->
+        </form>
+    </body>
+
+</html>
