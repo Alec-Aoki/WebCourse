@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Erros</title>
+    
+        <script>
+            var video =  Array()
+            video[1] = Array()
+            video[1]['nome'] = 'Scott Pilgrim Vs. O Mundo'
+            video[1]['categoria'] = 'Animacao'
+
+            function getVideo(video){
+                // console.log(video[0]) // Undefined -> não mata a aplicação
+                try {
+                    console.log(video[0]['nome']) // Erro (Type Error)
+                } catch (e) {
+                    console.log('Vídeo não encontrado') // Não dá TypeError!
+
+                    throw new Error('Força o erro')
+                } /* finally{
+                    // Sempre é executado (?)
+                } */
+            }
+            getVideo(video)
+
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+</html>

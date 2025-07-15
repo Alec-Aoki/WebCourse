@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>BOM</title>
+
+        <!-- DOM = DOCUMENT OBJECT MODEL (árvore dos elementos da paǵina)-->
+        <!-- BOM = BROWSER OBJECT MODEL (acesso a recursos do browser) -->
+        <!-- alert() é exemplo de BOM! -->
+        <!-- Documentação no W3Schools -->
+
+        <script>
+            /* WINDOW */
+            var janela
+
+            function abrirPopUp(){
+                janela = window.open('https://www.google.com', 'nova_janela', 'width=500, height=600')
+            }
+            function fecharPopUp(){
+                janela.close()
+            }
+
+            /* SCREEN */
+            // Sem considerar a barra de ferramentas
+            var altura = window.screen.availHeight
+            var largura = window.screen.availWidth
+
+            console.log(altura + ' x ' + largura)
+
+            if(largura < 500){
+                console.log('Largura < 500')
+            } else {
+                console.log('Largura >= 500')
+            }
+
+            /* TIMING */
+            // setTimeout(function(){console.log('Teste setTimeout')}, 2000) // 2000 milissegundos (2 segundos)
+            var i = 5
+
+            var x = setInterval(function(){
+                console.log('Teste setInterval ' + i + '\n')
+                i--
+                if(i == 0){
+                    //window.location.reload()
+                    clearInterval(x)
+                }
+            }, 1000)
+            
+
+        </script>
+    </head>
+
+    <body>
+        <h3> Window </h3>
+        <button type="button" onclick="abrirPopUp()"> Abrir Janela </button>
+
+        <button type="button" onclick="fecharPopUp()"> Fechar Janela </button>
+
+        <button type="button" onclick="window.print()"> Imprimir Pagina </button>
+        
+        <hr>
+
+        <h3> Location </h3>
+        <button type="button" onclick="window.location.href = 'https://www.google.com'"> Abrir Google </button>
+
+    </body>
+</html>
