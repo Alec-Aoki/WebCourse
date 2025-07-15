@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+
+
+    <!--
+    EVENTOS DE JANELA
+        onresize
+        onscroll
+        OBS: abrir o console conta como resize
+    -->
+    <body
+    onresize="console.log('Resize disparado')">
+        <!--
+        EVENTOS DO MOUSE
+            onclick = click
+            ondblclick = double click
+            onmouseup = qndo o click é solto
+            onmouseover = qndo passar o mouse por cima
+            onmouseout = qndo o mouse sai da area
+        -->
+        <div
+        style="background-color: gray;
+            height: 150px;
+            width: 150px;"
+        ondblclick="alert('Mouse clicado')">
+        </div>
+
+        <br>
+        
+        <!--
+        EVENTOS DO TECLADO
+            onkeydown = qndo aperta a tecla
+            onkeyup = qndo solta a teclada
+            onkeypress = o período entre os dois acima, só
+                        funciona com teclas de caractere
+            OBS: o keydown e o keypress processa antes de
+             escrever o caractere, o keyup escreve antes de
+             processar
+        -->
+        <input
+        type="text"
+        onkeyup="alert('Tecla pressionada')">
+
+        <!--
+        EVENTOS DE FORMULÁRIO
+            onfocus = selecionar/clicar no elemento
+            onblur = qndo perde o foco
+            onchange
+        -->
+        <input
+        type="text"
+        onblur="console.log('Foco alterado')">
+        <!--OBS: colocar um alert no onfocus iria focar no ok do
+        alert, e aí retornar pro input, causando um loop-->
+
+        <select
+        onchange="console.log('Mundaça de estado')">
+            <option value="1">Selecione 1</option>
+            <option value="2">Selecione 2</option>
+        </select>
+    </body>
+</html>
