@@ -90,3 +90,32 @@ carro.acelerar()
 console.log(`A velocidade atual do carro (${carro.modelo} ${carro.cor}) é: ${carro.getVelocidadeAtual()} km/h`)
 console.log(carro.velocidadeAtual) // undefined
 console.log(carro.getVelocidadeAtual()) // 10
+
+/* Funções Factory */
+// Função que permite a criação de objetos
+
+let Bicicleta1 = {
+    cor: 'Branca',
+    marcha: 'única',
+    aro: 12,
+    pedalar(){
+        console.log('Método pedalar() executado')
+    }
+}
+
+console.log(Bicicleta1)
+
+let BicicletaFactory = function(cor, marcha, aro){
+    // Função que cria e retorna o objeto
+    return {
+        cor,
+        marcha,
+        aro,
+        pedalar(){
+            console.log('Método pedalar() executado')
+        }
+    }
+}
+
+let Bicicleta2 = BicicletaFactory('Vermelho', 21, 29)
+console.log(Bicicleta2)
