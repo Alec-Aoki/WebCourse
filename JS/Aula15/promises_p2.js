@@ -1,49 +1,35 @@
-/* Promises pt. 2 */
-// Simulando uma requisição http
-let promessa = new Promise(
+/* Async e Await */
+// Como as promises são assíncronas, podemos usar esses métodos para executá-las
+// na ordem certa, definindo a função como async e usando o await
+
+let processoAssincrono = new Promise(
     (resolve, reject) => {
-        try{
-            throw new Error('Erro')
-
-            setTimeout(
-            () => {
-                // Requisição foi realizada de algum modo
-                let resposta_requisicao = {
-                    0: {id: 1, nome : 'Joao'},
-                    1: {id: 2, nome : 'Jose'},
-                    2: {id: 3, nome : 'Maria'},
-                }
-
-                // Encaminha resposta_requisicao como o parâmetro
-                // dados do .then()
-                resolve(resposta_requisicao)
-            },    
-            4000)
-        } catch(e){
-            // Erro na requisição
-            setTimeout(
-            () => {
-                resposta_requisicao = {
-                    codigo: 1050,
-                    erro: 'Falha na requisicao'
-                }
-
-                // Encaminha resposta_requisicao como o parâmetro
-                // errp do .catch()
-                reject(resposta_requisicao)
-            },    
-            4000)
-        }
+        setTimeout(() => resolve('Sucesso no processo assíncrono'), 3000)
     }
-).then((dados) => { // Executado quando resolve()
-    console.log('Operacao sequencial: ', dados)
+)
 
-    return 2 // Encaminha 2 como o pâmetro número do próximmo .then()
-}).then((numero) => { // É possível encadear múltiplos thens!
-    console.log('Número ', numero)
-}).catch((erro) => { // Executado quando reject()
-    console.log('Operação sequencial: ', erro)
-}).then(() => { // Os .then() depois do catch são executados
-    // mesmo se o catch não for
-    console.log('Then 1')
-})
+async function recuperarDados(){
+    // O await espera a promise retornar e aí segue normalmente
+    await processoAssincrono.then(param => console.log(param))
+
+    console.log('Processamento assíncrono 1')
+
+    // API (req. http), retorna uma Promise
+    await fetch('https://jsonplaceholder.typicode.com/comments')
+        .then(resposta => resposta.json())
+        .then(dados => console.log('Comentarios: ', dados))
+
+    await fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(resposta => resposta.json())
+        .then(dados => console.log('Posts: ', dados))
+
+    console.log('Processamento assíncrono 3')
+
+    return 'Fim'
+}
+
+// OBS: Ao usar async, a função se torna uma Promise!
+recuperarDados().then(p => console.log(p))
+
+// Desse modo, a ordem dos métodos assíncronos sempre vai ser
+// processoAssincrono -> comments -> posts
