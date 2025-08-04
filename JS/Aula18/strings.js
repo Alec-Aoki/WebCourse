@@ -12,3 +12,28 @@ console.log(codigo2) // abc12
 let codigo3 = 'xyz'
 codigo3 = codigo3.padEnd(9, 'abc')
 console.log(codigo3) // xyzabcabc
+
+/* Trim start e trim end */
+// trimLeft() e trimRight() fazem as mesmas coisas (apelidos)
+let texto = '            teste               '
+console.log('.' + texto + '.')
+console.log('.' + (texto.trimStart()).trimEnd() + '.') // Retorna a string modificada
+
+/* toString */
+// Método existente em todo objeto
+// Caso não seja sobrescrito, sempre retorna [object Tipo]
+// Nesse caso, [object Object]
+class Carro{
+    constructor(marca, modelo, ano){
+        this.marca = marca,
+        this.modelo = modelo,
+        this.ano = ano
+    }
+    
+    toString(){
+        return `Carro da marca ${this.marca}, modelo ${this.modelo}, ano ${this.ano}`
+    }
+}
+
+let carro = new Carro('Jeep', 'Renegade', 2021)
+console.log(carro.toString())
