@@ -37,3 +37,11 @@ class Carro{
 
 let carro = new Carro('Jeep', 'Renegade', 2021)
 console.log(carro.toString())
+
+/* replaceAll */
+// Permite substituir todas as ocorrências de uma palavra numa string por outra palavra
+let textoAntes = 'O João está trabalho no código fonte'
+console.log(textoAntes)
+
+let textoDepois = textoAntes.replaceAll('João', 'Marcos') // Retorna o texto novo
+console.log(textoDepois)
