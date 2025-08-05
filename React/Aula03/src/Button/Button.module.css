@@ -1,5 +1,8 @@
-/* CSS Externo */
+/* Módulo CSS */
 /*
+Evita conflitos de nome pois gera uma classe
+única usando hashing 
+*/
 .button{
   background-color: hsl(200, 100%, 50%);
   color: white;
@@ -8,4 +11,3 @@
   border: none;
   cursor: pointer;
 }
-*/
