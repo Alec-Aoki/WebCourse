@@ -1,0 +1,15 @@
+.clock{
+  color: black;
+  font-size: 6rem;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px hsl(0, 0%, 0%, 0.75);
+
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+body{
+  margin: 0;
+}
